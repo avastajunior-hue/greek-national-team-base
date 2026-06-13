@@ -31,7 +31,7 @@ public class TeamMemberPractice extends OpMode {
         telemetry.addData("Left Stick Normal",yaxis);
 
         yaxis = squareInputWithSign(yaxis);
-        telemetry.addData("Left Stixk Modified",yaxis);
+        telemetry.addData("Left Stick Modified",yaxis);
 
     }
 }
