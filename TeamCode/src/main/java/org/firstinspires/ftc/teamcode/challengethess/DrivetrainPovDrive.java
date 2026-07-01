@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-public class BenchDrive {
+public class DrivetrainPovDrive {
     private DcMotor leftMotor, rightMotor;
 
     public void init(HardwareMap hwMap) {
@@ -14,14 +14,14 @@ public class BenchDrive {
         leftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         rightMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
-        leftMotor.setDirection(DcMotorSimple.Direction.REVERSE);
+        rightMotor.setDirection(DcMotorSimple.Direction.REVERSE);
     }
 
     public void drive(double throttle, double spin) {
         double leftPower = throttle + spin;
         double rightPower = throttle - spin;
-        double largest = Math.max(Math.abs(leftPower), Math.abs(rightPower));
-        if(largest > 1.0) {
+       double largest = Math.max(Math.abs(leftPower), Math.abs(rightPower));
+       if(largest > 1.0) {
             leftPower /= largest;
             rightPower /= largest;
         }

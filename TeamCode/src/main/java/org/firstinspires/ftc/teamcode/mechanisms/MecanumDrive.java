@@ -11,7 +11,10 @@ import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.opencv.core.Mat;
 
 public class MecanumDrive {
-    private DcMotor frontLeftMotor, backLeftMotor, frontRightMotor, backRightMotor;
+    private DcMotor frontLeftMotor;
+    private  DcMotor backLeftMotor;
+    private  DcMotor  frontRightMotor;
+    private  DcMotor backRightMotor;
     private IMU imu;
 
     public void init(HardwareMap hwMap) {
